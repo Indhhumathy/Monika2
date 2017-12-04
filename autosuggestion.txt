@@ -1,0 +1,46 @@
+autosuggestion
+--------------------------------------------------------------------------------
+var availableTags = [];
+var e = jQuery.Event("keydown", {
+    keyCode: 13
+});
+
+$('body').on('click', '.ui-menu-item', function(){
+  console.log('cliked');
+  $('.chatInputBox').trigger(e);
+});
+
+var autocompleteOpendedFirstTime = false;
+var acWidth = $('.chatInputBox').width();
+$(".chatInputBox").autocomplete({
+    minLength: 5, // change the length value to 5
+    source: function(request, response) {
+        var results = $.ui.autocomplete.filter(availableTags, request.term);
+        response(results.slice(0, 5));
+
+    },
+    fluid: true,
+    resizable: false,
+    width: acWidth,
+    position: {
+        my: "left bottom",
+        at: "left top"
+    },
+    open: function() {
+        var position = $(".ui-autocomplete").position(),
+            left = position.left,
+            top = position.top;
+        if (!autocompleteOpendedFirstTime) {
+            autocompleteOpendedFirstTime = true;
+            top = top - 50;
+        }
+        var _width = $('.kore-chat-body').width() - 30;
+        $(".ui-autocomplete").css({
+            left: left + "px",
+            top: top + "px",
+            width: _width + "px"
+        });
+
+    }
+});
+// -------------------------

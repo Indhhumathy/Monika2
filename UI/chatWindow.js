@@ -700,6 +700,616 @@ function koreBotChat() {
             handles: "n, e, w, s",
             containment: "html"
         });
+        var availableTags = [" List of Artificial Intelligence technologies " , 
+
+" What is Biometrics? " , 
+
+" 5 senses of AI  Continued " , 
+
+" About automation certification " , 
+
+" About Automation Engineers " , 
+
+" Are there any specific skills required to plan for automation within SAP accounts? " , 
+
+" Are you voice enabled? " , 
+
+" Articles within the 1st Edition of Automation Drive  In Action " , 
+
+" Artificial Intelligence  Definitions " , 
+
+" Automation Drive Academy " , 
+
+" Automation drive contacts " , 
+
+" Automation drive outcomes " , 
+
+" Automation Drive  A closer look " , 
+
+" Automation Drive  Case studies " , 
+
+" Automation Enablement Lead " , 
+
+" Automation failure " , 
+
+" Automation ideas for AD projects " , 
+
+" Automation of ticket assignment " , 
+
+" Automation Thought Leadership, Research and Communities " , 
+
+" Any ready to use automations within SAP? " , 
+
+" Behavior analytics " , 
+
+" Benefits of IBM Watson " , 
+
+" Benefits of IKON " , 
+
+" Can helpdesk be automated? " , 
+
+" Can I use any automation tool for project deliverable? " , 
+
+" Capabilities of blueprism " , 
+
+" Case studies for monitoring " , 
+
+" Case study for a Large European clearing house " , 
+
+" Case study for an electric company " , 
+
+" Case study for Office supplies retailer " , 
+
+" Certification overview " , 
+
+" Cognitive Automation " , 
+
+" Contact" , 
+
+" Do we have any specific automation process for ADM kind of work? " , 
+
+" Do we have automation demos ready for showcasing client? " , 
+
+" Do you have a methodology or approach to identifying automation opportunities? " , 
+
+" Do you have or use a specific guide or knowledge article on how to use Automation? " , 
+
+" Do you have Sector-specific bots? " , 
+
+" Does UiPath support typical front- and back office tasks? " , 
+
+" Explain how RPA tool, framework and implementation methodology would minimize the need to maintain the RPA scripts over time. " , 
+
+" Explain how you can automate Monitoring and Tracking of Scheduled Jobs " , 
+
+" Effort required to implement IKON in a project " , 
+
+" FMA presentation deck " , 
+
+" Give few examples of RPA related activities carried out " , 
+
+" Have we implemented RPA for Oracle Fusion Applications before? " , 
+
+" Have you integrated Amazon Alexa with ServiceNow? " , 
+
+" Head of Industrialization and Automation " , 
+
+" Hello Monika, how are you doing? " , 
+
+" Helpdesk number or contact " , 
+
+" Hi Monika " , 
+
+" How are RPA scripts orchestrated in UiPath? " , 
+
+" How Automation Change my life? " , 
+
+" How better can we use business data with automation tool ? " , 
+
+" How can I be part of this automation drive? " , 
+
+" How can IKON help in faster turnaround of AM tickets? " , 
+
+" How can we use Chatbots in the enterprise? " , 
+
+" How can you automate the User Provisioning process for a customer? " , 
+
+" How do I join the automation community? " , 
+
+" How do we ensure quality of our RPA work? " , 
+
+" How do you ensure your resources are competent in Automation? " , 
+
+" How do you help in FMA? " , 
+
+" How does automation drive team support? " , 
+
+" How is Accenture doing in Automation? " , 
+
+" How is Atos doing in Automation? " , 
+
+" How is Capgemini structured to invest in Automation and how does it take these investments across the organization " , 
+
+" How is Cognizant doing in Automation? " , 
+
+" How is Deloitte doing in Automation? " , 
+
+" How is Infosys doing in Automation? " , 
+
+" How is TCS doing in Automation? " , 
+
+" How many case studies available? " , 
+
+" How many certified Blue Prism experts do we have? " , 
+
+" How many use cases does an account submit as a target? " , 
+
+" How much does a typical automation cost and how long it takes? " , 
+
+" How much effort required to automate a simple task? " , 
+
+" How our competitors are doing in Automation? " , 
+
+" How this automation drive will reduce the efforts? " , 
+
+" How to leverage the automation to individual project? " , 
+
+" How to perform automatic transports in sap? " , 
+
+" How will automation help in reduction incidents ? " , 
+
+" How will Capgemini integrate RPA into client applications? " , 
+
+" How will it improve the business? " , 
+
+" How will we manage and control data security and access in our RPA implementation? " , 
+
+" Humans and machines " , 
+
+" I'd like to read about Artificial Intelligence " , 
+
+" I'd like to read about automation " , 
+
+" I'd like to read about virtual assistant " , 
+
+" Virtual Personal Assistant (VPA) " , 
+
+" Virtual Executive Assistant (VEA) " , 
+
+" Virtual Customer Assistant (VCA) " , 
+
+" Virtual employees " , 
+
+" Industrialization Solutions and Tools Lead " , 
+
+" Introduction to Odigo " , 
+
+" Is a dedicated environment needed for RPA implementation? " , 
+
+" Is it possible to automate a complete end to end business process? " , 
+
+" Is it possible to drill down into an audit trail showing anything that a robot has done? " , 
+
+" Is our RPA solution portable to another service provider, should client decide to discontinue the service " , 
+
+" Is RARE is SAP specific or any other ERP's can use? " , 
+
+" License costs " , 
+
+" List all the Central Automation Team Leads " , 
+
+" List of AI / Analytics Platform tools " , 
+
+" List of Application Performance Monitoring Tools " , 
+
+" List of Artificial Intelligence applications " , 
+
+" List of Automation tools that are Capgemini IPs " , 
+
+" List of case studies for Agriculture domain " , 
+
+" List of case studies for Application Maintenance " , 
+
+" List of case studies for AppMon " , 
+
+" List of case studies for automation anywhere tool " , 
+
+" List of case studies for Automic tool " , 
+
+" List of case studies for Banking domain " , 
+
+" List of case studies for Beverages domain " , 
+
+" List of case studies for Cloud Infra Services " , 
+
+" List of case studies for Energy and Gas domain " , 
+
+" List of case studies for Entertainment domain " , 
+
+" List of case studies for Financial Technology Solutions domain " , 
+
+" List of case studies for Government domain " , 
+
+" List of case studies for Insurance domain " , 
+
+" List of case studies for IT domain " , 
+
+" List of case studies for Land Registry domain " , 
+
+" List of case studies for LogAnalyzer " , 
+
+" List of case studies for Manufacturing domain " , 
+
+" List of case studies for Oil field domain " , 
+
+" List of case studies for Pharma domain " , 
+
+" List of case studies for Retail domain " , 
+
+" List of case studies for Testing " , 
+
+" List of Case Studies for Virtual Assistant " , 
+
+" List of case studies for Water Utility domain " , 
+
+" List of Infrastructure Monitoring Tools " , 
+
+" List of Knowledge management tools " , 
+
+" List of monitoring case studies " , 
+
+" List of Orchestrators / ITPA Tools " , 
+
+" List of Robotic Process Automation RPA Tools " , 
+
+" List of SBU Automation Leads " , 
+
+" List of Test Analytics Platforms " , 
+
+" List of Test Case execution platforms " , 
+
+" List of Test Monitoring Dashboards " , 
+
+" List of testing case studies for Credit Information Services domain " , 
+
+" List of Virtual Assistant tools " , 
+
+" List some Application Log Analysis tools " , 
+
+" List some Mobile testing platform " , 
+
+" List the tool that is central lifecycle management hub for SAP systems " , 
+
+" Man's new best friend " , 
+
+" Monika I am not happy? " , 
+
+" Proof-of-Concepts " , 
+
+" Provide some estimates regarding benefits of virtual assistants " , 
+
+" Python scripting " , 
+
+" Robotic Process Automation " , 
+
+" RPA " , 
+
+" SAP " , 
+
+" SBU Automation Lead for Apps 1 " , 
+
+" SBU Automation Lead for Apps 1 NA " , 
+
+" SBU Automation Lead for Apps 1 UK " , 
+
+" SBU Automation Lead for Apps 2 " , 
+
+" SBU Automation Lead for CIS " , 
+
+" SBU Automation Lead for FS " , 
+
+" SBU Automation Lead for Sogeti " , 
+
+" Tell me more about the Ticket Analytics Solution " , 
+
+" Thanks " , 
+
+" Thanks Monika " , 
+
+" Top Automation opportunities " , 
+
+" Unix shell scripting " , 
+
+" What are the new automations for SAP? " , 
+
+" What all RPA tools do you have expertise in? " , 
+
+" What are Graphics processing units? " , 
+
+" What are the applications in NLP? " , 
+
+" What are the automation offerings in the area of Incident Management " , 
+
+" What are the benefits of automation? " , 
+
+" What are the benefits of using Monika? " , 
+
+" What are the components of the Automation Drive Suite? " , 
+
+" What are the five Senses of Automation? " , 
+
+" What are the future automation models in User Interaction? " , 
+
+" What are the future automation technologies in User Interaction? " , 
+
+" What are the future technologies for automation? " , 
+
+" What are the next steps if I want to implement RPA in my account? " , 
+
+" What are the present automation models in User Interaction? " , 
+
+" What are the present automation technologies used in User Interaction? " , 
+
+" What are the tools for automation in Listen / Talk Interact? " , 
+
+" What are the tools for automation in Remember / Knowledge? " , 
+
+" What are the tools for automation in Service / Act? " , 
+
+" What are the tools for automation in Think / Analyze? " , 
+
+" What are the tools for automation in Watch / Monitor? " , 
+
+" What are Virtual Agents? " , 
+
+" What areas are currently researched in Artificial Intelligence? " , 
+
+" What framework and methodology is the RPA solution based on? " , 
+
+" What is a chatbot? " , 
+
+" What is a neural network? " , 
+
+" What is a RPA CoE? " , 
+
+" What is a Virtual Customer Assistant? " , 
+
+" What is a Virtual Executive Assistant? " , 
+
+" What is a Virtual Personal Assistant? " , 
+
+" What is Act sense? " , 
+
+" What is Alexa? " , 
+
+" What is appDynamics? " , 
+
+" What is AppMon Tool? " , 
+
+" What is Artificial Intelligence? " , 
+
+" What is Automation Academy? " , 
+
+" What is Automation Anywhere? " , 
+
+" What is automation drive store? " , 
+
+" What is Automation Drive Suite? " , 
+
+" What is Automation Drive? " , 
+
+" What is Automation Library? " , 
+
+" What is Automation? " , 
+
+" What is Automic tool? " , 
+
+" What is Ayehu Eyeshare tool? " , 
+
+" What is Blue Prism tool? " , 
+
+" What is BMC Atrium Orchestrator? " , 
+
+" What is BMC Discovery tool? " , 
+
+" What is bot? " , 
+
+" What is CA Process Orchestrator? " , 
+
+" What is Cafe Automation tool? " , 
+
+" What is Cogito tool? " , 
+
+" What is Command Center? " , 
+
+" What is Cortex tool? " , 
+
+" What is Dataiku tool? " , 
+
+" What is Deep Learning? " , 
+
+" What is Digi Assure? " , 
+
+" What is Dynatrace tool? " , 
+
+" What is ELK? " , 
+
+" What is Experitest? " , 
+
+" What is H2O.AI? " , 
+
+" What is HP Operations Orchestrator? " , 
+
+" What is IBM SPSS tool? " , 
+
+" What is IBM Tivoli tool? " , 
+
+" What is IBM Watson? " , 
+
+" What is IKON? " , 
+
+" What is Image and Video Analysis technology? " , 
+
+" What is Intelligent Test Automation Platform? " , 
+
+" What is Intellimap? " , 
+
+" What is IoT? " , 
+
+" What is KINECT? " , 
+
+" What is KNIME tool? " , 
+
+" What is Leap Motion? " , 
+
+" What is licensing cost for UI Path? " , 
+
+" What is LogAnalyzer? " , 
+
+" What is Machine Learning? " , 
+
+" What is Minerva tool? " , 
+
+" What is Moogsoft tool? " , 
+
+" What is Natural Language Generation? " , 
+
+" What is Natural Language Processing and Text Analytics? " , 
+
+" What is New Relics tool? " , 
+
+" What is NICE tool? " , 
+
+" What is OpenSpan Pega tool? " , 
+
+" What is OPTIK platform? " , 
+
+" What is predictive analysis? " , 
+
+" What is Prometheus? " , 
+
+" What is Prosodie tool? " , 
+
+" What is Qlik tool? " , 
+
+" What is Rapid Miner? " , 
+
+" What is Rapid Resolution tool? " , 
+
+" What is Remember sense? " , 
+
+" What is SAP Solution Manager? " , 
+
+" What is Scikit platform? " , 
+
+" What is Semantic technology? " , 
+
+" What is Service Now Orchestrator tool? " , 
+
+" What is Smart Analytics tool? " , 
+
+" What is Smart Foundry? " , 
+
+" What is SmarTest? " , 
+
+" What is Solution Finder? " , 
+
+" What is speech recognition? " , 
+
+" What is Splunk tool? " , 
+
+" What is Swarm intelligence? " , 
+
+" What is Tableau platform? " , 
+
+" What is Talk/Listen sense? " , 
+
+" What is TDM Central? " , 
+
+" What is TeamForge? " , 
+
+" What is Tensorflow? " , 
+
+" What is the difference between Rule-based system and Machine Learning-based system? " , 
+
+" What is the future automation model of Watch Monitoring? " , 
+
+" What is the future automation technology of Watch Monitoring? " , 
+
+" What is the present automation technology of Watch Monitoring? " , 
+
+" What is the present model of Monitoring Watching? " , 
+
+" What is Think sense? " , 
+
+" What is UIPath? " , 
+
+" What is USP, differentiators? " , 
+
+" What is Watch sense? " , 
+
+" What is you current capacity in terms of specialised RPA consultants? " , 
+
+" What platform does RaRe support? " , 
+
+" What questions you can answer? " , 
+
+" What support will my project get in terms of automation? " , 
+
+" Who is Monika? " , 
+
+" Whom should we contact for more information? " , 
+
+" Why Industrialization? " , 
+
+" Why is automation important? " , 
+
+" Why is Intelligent Automation superior to Robotic Process Automation? " , 
+
+" Will automation help in programming field ? " 
+];
+        var e = jQuery.Event("keydown", {
+            keyCode: 13
+        });
+
+        $('body').on('click', '.ui-menu-item', function(){
+          console.log('cliked');
+          $('.chatInputBox').trigger(e);
+        });
+
+        var autocompleteOpendedFirstTime = false;
+        var acWidth = $('.chatInputBox').width();
+        $(".chatInputBox").autocomplete({
+            minLength: 5, // change the length value to 5
+            source: function(request, response) {
+                var results = $.ui.autocomplete.filter(availableTags, request.term);
+                response(results.slice(0, 5));
+
+            },
+            fluid: true,
+            resizable: false,
+            width: acWidth,
+            position: {
+                my: "left bottom",
+                at: "left top"
+            },
+            open: function() {
+                var position = $(".ui-autocomplete").position(),
+                    left = position.left,
+                    top = position.top;
+                if (!autocompleteOpendedFirstTime) {
+                    autocompleteOpendedFirstTime = true;
+                    top = top - 50;
+                }
+                var _width = $('.kore-chat-body').width() - 30;
+                $(".ui-autocomplete").css({
+                    left: left + "px",
+                    top: top + "px",
+                    width: _width + "px"
+                });
+
+            }
+        });
 
         _chatContainer.off('keyup', '.chatInputBox').on('keyup', '.chatInputBox', function (event) {
             var _footerContainer = $(me.config.container).find('.kore-chat-footer');
