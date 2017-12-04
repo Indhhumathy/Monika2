@@ -1,0 +1,67 @@
+body {
+    /*overflow-x: hidden;*/
+    /*font-family: Verdana, Geneva, sans-serif*/
+}
+
+#dialog img {
+    width: 85%;
+    height: auto;
+}
+
+#out-dialog {
+    position: fixed;
+    bottom: 10px;
+    z-index: 100;
+    padding: 10px;
+}
+
+.ui-autocomplete {
+    z-index: 99999 !important;
+}
+.ui-button:focus { outline:none !important }
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    text-decoration-style: none;
+}
+
+.ui-dialog {
+    z-index: 99999 !important;
+}
+
+.ui-dialog .ui-dialog-titlebar-buttonpane>a {
+    float: right;
+    margin-right: 5px;
+}
+
+.ui-dialog {
+    padding: 0 !important;
+    background: white;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .2);
+    border: 1px solid #c3c3c3;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    width: 19px !important;
+    height: 19px !important;
+    margin-right: 5px;
+}
+.ui-dialog-titlebar-close {
+    padding:0 !important;
+}
+.ui-dialog-titlebar-close:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    /* Change path to image*/
+    /*background-image: url('UI/images/ui-icons_777777_256x240.png');*/
+    background-position: -96px -128px;
+    background-repeat: no-repeat;
+}

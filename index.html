@@ -1,0 +1,173 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <!-- Meta Tags 27-11 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
+    <title>Graph Bot - Simple AI powered IT Support Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=1.0" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!--  -->
+    <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+    <!-- JQuery And JQuery UI libraries. -->
+    <script src="UI/libs/jquery.js" type="text/javascript"></script>
+    <script src="UI/libs/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script src="UI/libs/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="UI/libs/jquery-ui.min.css" rel="stylesheet"></link>
+    <!-- Kore -->
+    <script src="libs/lodash.min.js"></script>
+    <script src='libs/anonymousassertion.js'></script>
+    <script src="kore-bot-sdk-client.js"></script>
+    <script src="UI/chatWindow.js" type="text/javascript"></script>
+    <script src="libs/emoji.js" type="text/javascript"></script>
+    <script src="libs/recorder.js" type="text/javascript"></script>
+    <script src="libs/recorderWorker.js" type="text/javascript"></script>
+    <link href="UI/chatWindow.css" rel="stylesheet"></link>
+    <link href="libs/emojione.sprites.css" rel="stylesheet"></link>
+    <link href="libs/purejscarousel.css" rel="stylesheet"></link>
+    <script src="libs/purejscarousel.js" type="text/javascript"></script>
+    <script src="UI/custom/customTemplate.js" type="text/javascript"></script>
+    <link href="UI/custom/customTemplate.css" rel="stylesheet"></link>
+    <link rel="stylesheet" type="text/css" href="UI/style.css">
+    <script type="text/javascript" src="UI/libs/loader.js"></script>
+    <script type="text/javascript" src="libs/speech/app.js"></script>
+    <script type="text/javascript" src="libs/speech/key.js"></script>
+    <script type="text/javascript" src="libs/client_api.js"></script>
+    <!-- JWT -->
+    <script language="JavaScript" type="text/javascript" src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
+    <script type="text/javascript" src="libs/sign.js"></script>
+    <script type="text/javascript">
+    $(document).on("ready", function() {
+        function assertion(options, callback) {
+            var jsonData = {
+                "clientId": botOptions.clientId,
+                "clientSecret": "",
+                "identity": botOptions.userIdentity,
+                "aud": "",
+                "isAnonymous": true
+            };
+            // $.ajax({
+            //  url: botOptions.koreAPIUrl + "users/sts",
+            //  type: 'post',
+            //  data: jsonData,
+            //  dataType: 'json',
+            //  success: function (data) {
+            //      options.assertion = data.jwt;
+            //      options.handleError = koreBot.showError;
+            //      options.botDetails = koreBot.botDetails;
+            //      callback(null, options);
+            //      setTimeout(function () {
+            //          if (koreBot && koreBot.initToken) {
+            //              koreBot.initToken(options);
+            //          }
+            //      }, 2000);
+            //  },
+            //  error: function (err) {
+            //      koreBot.showError(err.responseText);
+            //  }
+            // });
+            options.fName = 'bob';
+            options.lName = 'chatBuilder';
+            options.clientId = botOptions.clientId;
+            options.identity = botOptions.userIdentity;
+            options.isAnonymous = true;
+            options.clientSecret = "mDnXfj9ZnNqo5Es+FRTngWuuzfUu2gadOraLsRONXNI=";
+            options.assertion = signToken(options);
+            options.handleError = koreBot.showError;
+            options.botDetails = koreBot.botDetails;
+            callback(null, options);
+            setTimeout(function() {
+                if (koreBot && koreBot.initToken) {
+                    koreBot.initToken(options);
+                }
+            }, 2000);
+
+        }
+
+        var botOptions = {};
+        botOptions.logLevel = 'debug';
+        botOptions.koreAPIUrl = "https://bots.kore.ai/api/";
+        botOptions.koreSpeechAPIUrl = "https://speech.kore.ai/";
+        //botOptions.bearer = "bearer xyz-------------------";
+        botOptions.ttsSocketUrl = 'wss://speech.kore.ai/tts/ws';
+        botOptions.userIdentity = 'userIdentity'; // Provide users email id here
+        botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
+        botOptions.assertionFn = assertion;
+        botOptions.koreAnonymousFn = koreAnonymousFn;
+        botOptions.clientId = "cs-f36d754c-7940-5145-a9d3-15bc1ed526ea"; // secure client-id
+        botOptions.botInfo = { name: "exp", "_id": "st-a9c1a698-b0f6-5d0f-ac87-16c382a0b257" }; // bot name is case sensitive
+        var chatConfig = {
+            botOptions: botOptions,
+            allowIframe: false,
+            isSendButton: true,
+            isTTSEnabled: true,
+            isSpeechEnabled: true,
+            allowGoogleSpeech: true
+        };
+        /**
+            allowGoogleSpeech will use Google cloud service api.
+            Google speech key is required for all browsers except chrome.
+            On Windows 10, Microsoft Edge will support speech recognization.
+         */
+        var koreBot = koreBotChat();
+        koreBot.show(chatConfig);
+        $('.openChatWindow').click(function() {
+            koreBotChat().show(chatConfig);
+        });
+
+
+        var e = jQuery.Event("keydown", {
+            keyCode: 13
+        });
+
+        jQuery("body").on("click", 'reword',function() {
+            var msgText = $(this)[0].getAttribute('title');
+            console.log(msgText);
+
+            $('.chatInputBox').append(msgText);
+            $('.chatInputBox').trigger(e);
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="chatContainer">
+        <button class="openChatWindow">Open Chat Window</button>
+    </div>
+    <br>
+    <br>
+    <div class='reword'>
+        <p class="question" style='display:none'>reword question 1</p>How to add mailbox to outlook</div>
+    <style type="text/css">
+    reword {
+        color: red;
+    }
+    </style>
+    <reword title='title1'>content1</reword>
+    <reword title='title2'>content2</reword>
+    <reword title='title3'>content3</reword>
+    <br>
+    <div>
+        <b>Biometrics </b>measures the characteristics of human expressions and physical states to understand intent, emotion, age, etc.
+        <br>
+        <br>You can read about other Artificial Intelligence technologies
+        <reword title="What is biometrics">What is biometrics</reword>.
+        <br>
+        <reword title="5 senses of AI Continued">5 senses of AI Continued</reword>.
+    </div>
+
+    <div id="dialog" title="Basic dialog"></div>
+</body>
+
+</html>
