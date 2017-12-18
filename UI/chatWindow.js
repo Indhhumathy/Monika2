@@ -2188,16 +2188,16 @@ function koreBotChat() {
                     screenHeight = window.screen.height;
 
 
-                    if (screenWidth >= 1280) {
-                        dialogWidth = 500 * 1.2;
-                        dialogHeight = 350 * 1.2;
+                    if (screenWidth >= 1000) {
+                        dialogWidth = 450 * 1.2;
+                        dialogHeight = 300 * 1.2;
                         isDesktop = true;
                         // myval = "left bottom+440";
                         // atval = "left+220";
                         // ofval = "body";
                     }
                     // else if (screenWidth < 890) {
-                    else if (screenWidth < 890) {
+                    else if (screenWidth < 650) {
                         dialogWidth = screenWidth * .95;
                         dialogHeight = screenHeight * .95;
                         isDesktop = true;
@@ -2205,8 +2205,8 @@ function koreBotChat() {
                         // atval = "left bottom";
                         // ofval = "body";
                     } else {
-                        dialogWidth = 500;
-                        dialogHeight = 350;
+                        dialogWidth = 100;
+                        dialogHeight = 300;
                         isDesktop = true;
                         // myval = "left bottom+440";
                         // atval = "left+220";
@@ -2350,36 +2350,7 @@ function koreBotChat() {
             	{{else}} \
 				<div class="chatInputBox" contenteditable="true" placeholder="${botMessages.message}"></div> \
             	{{/if}} \
-			<div class="attachment"></div> \
-            {{if isTTSEnabled}} \
-                <div class="sdkFooterIcon ttspeakerDiv ttsOff"> \
-                    <button class="ttspeaker"> \
-                        <span class="ttsSpeakerEnable"></span> \
-                        <span class="ttsSpeakerDisable"></span> \
-                        <span style="display:none;"><audio id="ttspeaker" controls="" autoplay="" name="media"><source src="" type="audio/wav"></audio></span>\
-                    </button> \
-                </div> \
-            {{/if}} \
-            {{if isSpeechEnabled}}\
-            <div class="sdkFooterIcon microphoneBtn"> \
-                <button class="notRecordingMicrophone"> \
-                    <i class="fa fa-microphone fa-lg"></i> \
-                </button> \
-                <button class="recordingMicrophone"> \
-                    <i class="fa fa-microphone fa-lg"></i> \
-                    <span class="recordingGif"></span> \
-                </button> \
-                <div id="2textFromServer"></div> \
-            </div> \
-            {{/if}}\
-            <div class="sdkFooterIcon"> \
-                <button class="sdkAttachment attachmentBtn"> \
-                    <i class="fa fa fa-paperclip"></i> \
-                </button> \
-                <input type="file" name="Attachment" class="filety" id="captureAttachmnts"> \
-            </div> \
-			{{if !(isSendButton)}}<div class="chatSendMsg">Press enter to send</div>{{/if}} \
-		</div>';
+			</div>';
 
         var chatWindowTemplate = '<script id="chat_window_tmpl" type="text/x-jqury-tmpl"> \
 			<div class="kore-chat-window droppable"> \

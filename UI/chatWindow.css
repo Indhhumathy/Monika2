@@ -56,7 +56,7 @@
 	margin-top: 11px;
 }
 @media(max-width: 767px) {
-	.kore-chat-window {
+	.kore-chat-window .profile-photo .user {
 		left: 5px!important;
 		right: 5px!important;
 		top: 5px!important;
@@ -294,7 +294,7 @@ ul.chat-container li .profile-photo{
     bottom: 0;
     left: 0;
 }
-ul.chat-container li .profile-photo .user-account{
+ul.chat-container li .profile-photo .user-account {
     width: 34px;
     height: 34px;
     line-height: 34px;
@@ -313,11 +313,12 @@ ul.chat-container li .user-profile-photo{
     transition: all .3s ease-in-out;
     width: 34px;
     height: 34px;
-    position: absolute;
+    position: absolute !important;
     bottom: 0;
     left: 0;
+	right:4px;
 }
-ul.chat-container li .user-profile-photo .user-account{
+ul.chat-container li .user-account{
     width: 34px;
     height: 34px;
     line-height: 34px;
@@ -376,6 +377,8 @@ ul.chat-container li.fromCurrentUser.with-icon {
 {
 margin-left: 326px !important;
     margin-bottom: -18px !important;
+	right:4px;
+	position:fixed;
 }
 
 ul.chat-container li.fromCurrentUser .profile-photo .user-account.avatar {
@@ -1426,6 +1429,21 @@ ul.chat-container li.quickReplies {
         width: 100%;
     }
 }
+@media only screen and (max-width: 700px){
+    .boxclass {
+        left:720px;
+    }
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+{
+
+}
+
+
 :-ms-input-placeholder { /* Internet Explorer */
     color: #aaa; 
     font-size: 18px;
