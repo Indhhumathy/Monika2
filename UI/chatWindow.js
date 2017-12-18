@@ -1552,7 +1552,7 @@ function koreBotChat() {
                 if (me.expanded === false && _chatContainer.hasClass("ui-draggable")) {
                     _chatContainer.draggable("destroy");
                 }
-                _chatContainer.find('.minimized-title').html("Talk to " + me.config.chatTitle);
+                _chatContainer.find('.minimized-title').html("Monika – Your virtual assistance" + "</br>"  + "for Automation Drive");
                 me.minimized = true;
             }
             $('.recordingMicrophone').trigger('click');
@@ -1673,6 +1673,11 @@ function koreBotChat() {
         _chatContainer.off('click', '.reload-btn').on('click', '.reload-btn', function (event) {
             $(this).addClass("disabled").prop('disabled', true);
             me.resetWindow();
+		    $('#dialog').hide();
+			 $('.ui-dialog-titlebar').hide();
+			  $('.ui-dialog').hide();
+	
+	
             $('.recordingMicrophone').trigger('click');
             if(ttsAudioSource) {
                 ttsAudioSource.stop();
@@ -1824,7 +1829,10 @@ function koreBotChat() {
                     },
                     'clientMessageId': clientMessageId
                 }],
-                "createdOn": clientMessageId
+                "createdOn": clientMessageId,
+				"icon": "UI/images/user-icon.png"
+				 
+				
             };
             $('.attachment').html('');
             $('.kore-chat-window').removeClass('kore-chat-attachment');
@@ -1838,7 +1846,8 @@ function koreBotChat() {
                     'cInfo': { 'body': chatInput.text() },
                     'clientMessageId': clientMessageId
                 }],
-                "createdOn": clientMessageId
+                "createdOn": clientMessageId,
+				 "icon": "UI/images/user-icon.png"
             };
         }
 
@@ -2223,7 +2232,7 @@ function koreBotChat() {
                             my: 'top',
                             at: 'bottom+360'
                         },
-                        title: 'Details',
+                        title: 'Virtual Employees are set to deliver very real results',
                         close: function() {
                             $(".chatInputBox").focus();
                         }
@@ -2360,7 +2369,7 @@ function koreBotChat() {
                     <i class="fa fa-microphone fa-lg"></i> \
                     <span class="recordingGif"></span> \
                 </button> \
-                <div id="textFromServer"></div> \
+                <div id="2textFromServer"></div> \
             </div> \
             {{/if}}\
             <div class="sdkFooterIcon"> \
@@ -2377,7 +2386,12 @@ function koreBotChat() {
                                 <div class="minimized-title"></div> \
                                 <div class="minimized"><span class="messages"></span></div> \
 				<div class="kore-chat-header"> \
-					<div class="header-title" title="${chatTitle}">${chatTitle}</div> \
+					<div class="profile-photo"> \
+              <div class="" style="background-image:url(UI/images/moninew.jpg);background-size: 124% 115px;background-repeat: no-repeat;width: 82px;height: 101px;float: left;margin-top: -13%;padding-top: 44px;margin-left: -15px;">\
+              </div> \
+            </div> \
+			 <div class="header-title" title="${chatTitle}">${chatTitle}\
+            </div> \
 					<div class="chat-box-controls"> \
                                                 <button class="reload-btn" title="Reconnect"><span></span></button> \
 						<button class="minimize-btn" title="Minimize">&minus;</button> \
@@ -2400,21 +2414,40 @@ function koreBotChat() {
             </div> \
 		</script>';
 
-        var msgTemplate = '<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
-			{{if msgData.message}} \
-				{{each(key, msgItem) msgData.message}} \
-					{{if msgItem.cInfo && msgItem.type === "text"}} \
-						<li {{if msgData.type !== "bot_response"}}id="msg_${msgItem.clientMessageId}"{{/if}} class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} {{if msgData.icon}}with-icon{{/if}}"> \
-							{{if msgData.createdOn}}<div class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-							{{if msgData.icon}}<div class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
-							<div class="messageBubble">\
-								<div> \
-                                    {{if msgData.type === "bot_response"}} \
-                                        {{if msgItem.component  && msgItem.component.type =="error"}} \
-                                            <span style="color:${msgItem.component.payload.color}">{{html helpers.convertMDtoHTML(msgItem.component.payload.text, "bot")}} </span>\
-                                         {{else}} \
-                                            {{html helpers.convertMDtoHTML(msgItem.cInfo.body, "bot")}} \
-                                            {{if msgItem.component && msgItem.component.payload && msgItem.component.payload.videoUrl}}\
+        var msgTemplate =
+'<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
+    {{if msgData.message}} \
+      {{each(key, msgItem) msgData.message}} \
+      {{if msgItem.cInfo && msgItem.type === "text"}} \
+        <li {{if msgData.type !== "bot_response"}}\
+              fromCurrentUser\
+            {{else}}\
+              fromOtherUsers\
+            {{/if}}\
+            {{if msgData.icon}}with-icon{{/if}} \
+          class= "{{if msgData.type === "bot_response"}}\
+                    fromOtherUsers\
+                  {{else}}\
+                    fromCurrentUser\
+                  {{/if}} \
+            {{if msgData.icon}}with-icon{{/if}}"> \
+            {{if msgData.createdOn}}\
+              <div class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>\
+            {{/if}} \
+            {{if msgData.icon}}\
+              <div class="{{if msgData.type === "bot_response"}}\
+                    profile-photo\
+                  {{else}}\
+                    user-profile-photo\
+                  {{/if}}"><div class="user-account avtar" style="background-image:url(${msgData.icon})"></div></div>\
+            {{/if}} \
+            <div class="messageBubble"><div> \
+            {{if msgData.type === "bot_response"}} \
+              {{if msgItem.component  && msgItem.component.type =="error"}} \
+                <span style="color:${msgItem.component.payload.color}">{{html helpers.convertMDtoHTML(msgItem.component.payload.text, "bot")}} </span>\
+              {{else}} \
+                {{html helpers.convertMDtoHTML(msgItem.cInfo.body, "bot")}} \
+                {{if msgItem.component && msgItem.component.payload && msgItem.component.payload.videoUrl}}\
                                                 <div class="videoEle"><video width="300" controls><source src="${msgItem.component.payload.videoUrl}" type="video/mp4"></video></div>\
                                             {{/if}}\
                                         {{/if}} \
@@ -2422,14 +2455,14 @@ function koreBotChat() {
                                         {{html helpers.convertMDtoHTML(msgItem.cInfo.body, "user")}} \
                                     {{/if}} \
                                 </div>\
-								{{if msgItem.cInfo && msgItem.cInfo.emoji}} \
-									<span class="emojione emojione-${msgItem.cInfo.emoji[0].code}">${msgItem.cInfo.emoji[0].title}</span> \
-								{{/if}} \
+                                                                                                                                {{if msgItem.cInfo && msgItem.cInfo.emoji}} \
+                                                                                                                                                <span class="emojione emojione-${msgItem.cInfo.emoji[0].code}">${msgItem.cInfo.emoji[0].title}</span> \
+                                                                                                                                {{/if}} \
                                 {{if msgItem.cInfo.attachments}} \
                                     <div class="msgCmpt attachments" fileid="${msgItem.cInfo.attachments[0].fileId}"> \
                                         <div class="uploadedFileIcon"> \
                                             {{if msgItem.cInfo.attachments[0].fileType == "image"}} \
-                                                <span class="icon cf-icon icon-photos_active"></span> \
+                                               <span class="icon cf-icon icon-photos_active"></span> \
                                             {{else msgItem.cInfo.attachments[0].fileType == "audio"}}\
                                                 <span class="icon cf-icon icon-files_audio"></span> \
                                             {{else msgItem.cInfo.attachments[0].fileType == "video"}} \
@@ -2445,15 +2478,15 @@ function koreBotChat() {
                                         <div class="curUseruploadedFileName">${msgItem.cInfo.attachments[0].fileName}</div> \
                                     </div> \
                                 {{/if}} \
-								{{if msgData.isError}} \
-									<div class="errorMsg">Send Failed. Please resend.</div> \
-								{{/if}} \
-							</div> \
-						</li> \
-					{{/if}} \
-				{{/each}} \
-			{{/if}} \
-		</scipt>';
+                                                                                                                                {{if msgData.isError}} \
+                                                                                                                                                <div class="errorMsg">Send Failed. Please resend.</div> \
+                                                                                                                                {{/if}} \
+                                                                                                                </div> \
+                                                                                                </li> \
+                                                                                {{/if}} \
+                                                                {{/each}} \
+                                                {{/if}} \
+</script>';
         var templateAttachment = '<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
             {{if msgData.message}} \
                 {{each(key, msgItem) msgData.message}} \

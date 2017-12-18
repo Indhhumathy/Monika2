@@ -104,7 +104,7 @@
         botOptions.assertionFn = assertion;
         botOptions.koreAnonymousFn = koreAnonymousFn;
         botOptions.clientId = "cs-f36d754c-7940-5145-a9d3-15bc1ed526ea"; // secure client-id
-        botOptions.botInfo = { name: "exp", "_id": "st-a9c1a698-b0f6-5d0f-ac87-16c382a0b257" }; // bot name is case sensitive
+        botOptions.botInfo = { name: "Monika – Your virtual assistance", "_id": "st-a9c1a698-b0f6-5d0f-ac87-16c382a0b257" }; // bot name is case sensitive
         var chatConfig = {
             botOptions: botOptions,
             allowIframe: false,
@@ -142,31 +142,13 @@
 </head>
 
 <body>
-    <div id="chatContainer">
-        <button class="openChatWindow">Open Chat Window</button>
+<div id="chatContainer">
+        <!-- <button class="openChatWindow">Open Chat Window</button> -->
+        <div><img src="UI/images/monika_bg.png" style="width: 100%; height: 95vh;"></div>
+        
     </div>
-    <br>
-    <br>
-    <div class='reword'>
-        <p class="question" style='display:none'>reword question 1</p>How to add mailbox to outlook</div>
-    <style type="text/css">
-    reword {
-        color: red;
-    }
-    </style>
-    <reword title='title1'>content1</reword>
-    <reword title='title2'>content2</reword>
-    <reword title='title3'>content3</reword>
-    <br>
-    <div>
-        <b>Biometrics </b>measures the characteristics of human expressions and physical states to understand intent, emotion, age, etc.
-        <br>
-        <br>You can read about other Artificial Intelligence technologies
-        <reword title="What is biometrics">What is biometrics</reword>.
-        <br>
-        <reword title="5 senses of AI Continued">5 senses of AI Continued</reword>.
-    </div>
-
+    
+    
     <div id="dialog" title="Basic dialog"></div>
 </body>
 
